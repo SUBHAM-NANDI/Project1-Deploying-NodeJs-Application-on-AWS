@@ -49,8 +49,13 @@ npm run start
 
 Open an SSH client.
 Locate your private key file. The key used to launch this instance is node.js-app-deploy.pem
-Run this command, if necessary, to ensure your key is not publicly viewable.
+Run this command, if necessary, to ensure your key is not publicly viewable. 
+Change the permission of the .pem file using the below cmd.
+```
 chmod 400 "instance.pem"
+```
+Connect to the ec2 instance using the below cmd
+
 ```
 ssh -i instance.pem ubunutu@<PUBLIC IP_ADDRESS>
 ```
