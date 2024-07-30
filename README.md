@@ -2,7 +2,7 @@
 
 ### Testing the project locally
 
-1. Clone this project 
+1. Clone this project on the local machine.
 ```
 git clone https://github.com/SUBHAM-NANDI/AWS-Session.git
 ```
@@ -66,16 +66,29 @@ ssh -i instance.pem ubunutu@<PUBLIC IP_ADDRESS>
 ```
 sudo apt update
 ```
-3. Install Git - [Guide by DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-install-git-on-ubuntu-22-04) 
-4. Configure Node.js and `npm` - [Guide by DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-22-04)
+3. Install Git - For more info please follow [Guide by DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-install-git-on-ubuntu-22-04)
+```
+sudo apt install git
+```
+4. Configure Node.js and `npm` - For more info please follow [Guide by DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-22-04)
+```
+sudo apt install nodejs
+sudo apt install npm
+```
 
 ### Deploying the project on AWS
 
 1. Clone this project in the remote VM
 ```
-git clone https://github.com/verma-kunal/AWS-Session.git
+git clone https://github.com/SUBHAM-NANDI/AWS-Session.git
 ```
-2. Setup the following environment variables - `(.env)` file
+2. Create and open an environment variable(.env) file in the project folder.
+```
+touch .env
+vim .env
+``` 
+   
+4. Setup the following environment variables - `(.env)` file
 ```
 DOMAIN= ""
 PORT=3000
@@ -93,5 +106,9 @@ npm run start
 ```
 
 > NOTE - We will have to edit the **inbound rules** in the security group of our EC2, in order to allow traffic from our particular port
+ Go to the EC2 instance and go to security. Click on Security groups and then edit the Inbound Roules.
+ Add a separate Inbound rule with **Type - Custom TCP ** and post range - 3000 and then save.
 
 ### Project is deployed on AWS 🎉
+
+IMPORTANT - THIS NODE.JS APP HAS BEEN TAKEN FROM SOMEWHERE ELSE.
