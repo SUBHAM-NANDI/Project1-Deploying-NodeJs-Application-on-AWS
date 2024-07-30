@@ -39,13 +39,20 @@ npm run start
 1. Create an IAM user & login to your AWS Console
     - Access Type - Password
     - Permissions - Admin
+      
 2. Create an EC2 instance
     - Select an OS image - Ubuntu
     - Create a new key pair & download `.pem` file
     - Instance type - t2.micro
+      
 3. Connecting to the instance using ssh
+
+Open an SSH client.
+Locate your private key file. The key used to launch this instance is node.js-app-deploy.pem
+Run this command, if necessary, to ensure your key is not publicly viewable.
+chmod 400 "instance.pem"
 ```
-ssh -i instance.pem ubunutu@<IP_ADDRESS>
+ssh -i instance.pem ubunutu@<PUBLIC IP_ADDRESS>
 ```
 
 ### Configuring Ubuntu on remote VM
