@@ -2,11 +2,21 @@
 
 ### Testing the project locally
 
-1. Clone this project
+1. Clone this project 
 ```
-git clone https://github.com/verma-kunal/AWS-Session.git
+git clone https://github.com/SUBHAM-NANDI/AWS-Session.git
 ```
-2. Setup the following environment variables - `(.env)` file
+2. Open the project on VSCode.
+   
+3. Create an environment variable(.env) file.
+ ```
+ touch .env
+ ```
+This will create a hidden .env file.
+
+**Environment variable** files are essential for securely managing configuration settings and secrets across different environments (development, testing, production). They separate configuration from code, enhance security by preventing hardcoding of sensitive data, ensure consistency, simplify deployment, and support easy environment-specific configurations. This centralized management approach promotes maintainability and flexibility, making managing and updating settings easier without altering the codebase.
+   
+4. Setup the following environment variables - `(.env)` file
 ```
 DOMAIN= ""
 PORT=3000
@@ -15,9 +25,12 @@ STATIC_DIR="./client"
 PUBLISHABLE_KEY=""
 SECRET_KEY=""
 ```
-3. Initialise and start the project
+Create a Stripe account for free and copy the publishable and secret keys, respectively.
+Document link - https://docs.stripe.com/keys
+
+5. Initialise all dependencies and start the project
 ```
-npm install
+npm install 
 npm run start
 ```
 
